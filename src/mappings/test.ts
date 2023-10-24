@@ -1,4 +1,4 @@
-import { log } from '@graphprotocol/graph-ts'
+import { log, BigInt } from '@graphprotocol/graph-ts'
 
 export function testLog(): void {
   log.debug(
@@ -23,8 +23,10 @@ export function testLog(): void {
   )
 }
 
-export function testBigIntPlus(): void {
-  // implement
+export function testBigIntPlus(): BigInt {
+  let x = BigInt.fromI32(1000)
+  let y = BigInt.fromI32(2000)
+  return x + y
 }
 
 export function testAll(): void {
