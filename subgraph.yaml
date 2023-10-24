@@ -20,7 +20,7 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: ./src/mappings/factory.ts
+      file: ./src/mappings/test.ts
       entities:
         - Pool
         - Token
