@@ -5,12 +5,12 @@
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "release": "npm run codegen && npm run build && npm run coppy",
+    "release": "yarn codegen && yarn build && yarn coppy",
     "coppy": "cp build/Factory/Factory.wasm ../subgraph-wasm-runtime/src/host_exports/test_0_0_4.wasm"
   },
   "devDependencies": {
-    "@graphprotocol/graph-cli": "^0.57.0",
-    "@graphprotocol/graph-ts": "^0.31.0",
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "eslint": "^6.2.2",
