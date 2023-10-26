@@ -87,7 +87,7 @@ export function testBigIntMod(): BigInt {
     let mod2 = x2.mod(y2) // 2
     let x3 = BigInt.fromI32(20)
     let y3 = BigInt.fromI32(-9)
-    let mod3 = x3.mod(y3) // -7
+    let mod3 = x3.mod(y3) // 2
     return mod1.plus(mod2).plus(mod3)
 }
 
@@ -124,7 +124,11 @@ export function testBigIntToHex(): string {
     return BigInt.fromI32(1000).toHex()
 }
 
-
+export function testBigIntDividedByDecimal(): BigDecimal {
+    let x = BigInt.fromI32(1000)
+    let y = BigDecimal.fromString('2000')
+    return x.divDecimal(y)
+}
 
 export function testBigDecimalPlus(): BigDecimal {
     let x = BigDecimal.fromString('1000')
@@ -184,6 +188,7 @@ export function testAll(): void {
     testBigIntDividedBy()
     testBigIntPow()
     testBigIntMod()
+    testBigIntDividedByDecimal()
     testBigIntShiftLeft()
     testBigIntShiftRight()
     testBigIntBitOr()
