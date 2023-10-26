@@ -5,7 +5,9 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
-    "build": "graph build"
+    "build": "graph build",
+    "release": "yarn codegen && yarn build && yarn coppy",
+    "coppy": "cp build/Factory/Factory.wasm ../subgraph-wasm-runtime/src/host_exports/test_0_0_4.wasm"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.20.0",
