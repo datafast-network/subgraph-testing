@@ -5,7 +5,8 @@
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "release": "npm run codegen && npm run build"
+    "release": "npm run codegen && npm run build && npm run coppy",
+    "coppy": "cp build/Factory/Factory.wasm ../subgraph-wasm-runtime/src/host_exports/test_0_0_5.wasm"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.57.0",

@@ -1,4 +1,4 @@
-import {log, BigInt, BigDecimal} from '@graphprotocol/graph-ts'
+import {log, BigInt, BigDecimal, ByteArray, Address} from '@graphprotocol/graph-ts'
 
 export function testLog(): void {
     log.debug(
@@ -83,6 +83,15 @@ export function testBigIntBitAnd(): BigInt {
 export function testBigIntFromString(): BigInt {
     return BigInt.fromString('1000')
 }
+export function testBigIntToString(): string {
+    return BigInt.fromI32(1000).toString()
+}
+
+export function testBigIntToHex(): string {
+    return BigInt.fromI32(1000).toHex()
+}
+
+
 
 export function testBigDecimalPlus(): BigDecimal {
     const x = BigDecimal.fromString('1000')
@@ -123,6 +132,17 @@ export function testBigDecimalEquals(): boolean {
     return x.equals(y)
 }
 
+export function bytesToString(): string {
+    const txHash = ByteArray.fromHexString("0x25b1f7de5e6b8020f8dbb210f4a095727f63e58c8267f95c2de334957bbf20b8")
+    return txHash.toString()
+}
+
+export function bytesToHex(): string {
+    const txHash = ByteArray.fromHexString("0x25b1f7de5e6b8020f8dbb210f4a095727f63e58c8267f95c2de334957bbf20b8")
+    return txHash.toHex()
+}
+
+
 export function testAll(): void {
     testLog()
     testBigIntPlus()
@@ -136,6 +156,8 @@ export function testAll(): void {
     testBigIntBitOr()
     testBigIntBitAnd()
     testBigIntFromString()
+    testBigIntToString()
+    testBigIntToHex()
     testBigDecimalPlus()
     testBigDecimalMinus()
     testBigDecimalTimes()
@@ -143,4 +165,6 @@ export function testAll(): void {
     testBigDecimalFromString()
     testBigDecimalToString()
     testBigDecimalEquals()
+    bytesToString()
+    bytesToHex()
 }
