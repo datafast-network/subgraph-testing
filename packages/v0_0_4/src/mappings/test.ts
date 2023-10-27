@@ -196,31 +196,45 @@ export function testBytesToBase58(): string {
     return bytes.toBase58()
 }
 
+export function testEthereumBlock(
+  block: ethereum.Block,
+  transaction: ethereum.Transaction,
+  event: ethereum.Event
+): string {
+  let blockNumber = block.number.toString()
+  let txHash = transaction.hash.toHexString()
+  let eventAddress = event.address.toHexString()
+  let jointStr = `block_number=${blockNumber}, tx_hash=${txHash}, event_address=${eventAddress}`
+  return jointStr
+}
+
+
 export function testAll(): void {
-    testLog()
-    testBigIntPlus()
-    testBigIntMinus()
-    testBigIntTimes()
-    testBigIntDividedBy()
-    testBigIntPow()
-    testBigIntMod()
-    testBigIntDividedByDecimal()
-    testBigIntLeftShift()
-    testBigIntRightShift()
-    testBigIntBitOr()
-    testBigIntBitAnd()
-    testBigIntFromString()
-    testBigIntToString()
-    testBigIntToHex()
-    testBigDecimalPlus()
-    testBigDecimalMinus()
-    testBigDecimalTimes()
-    testBigDecimalDividedBy()
-    testBigDecimalFromString()
-    testBigDecimalToString()
-    testBigDecimalEquals()
-    testBytesToHex()
-    testBytesToString()
-    testHexToBytes()
-    testBytesToBase58()
+  testLog()
+  testBigIntPlus()
+  testBigIntMinus()
+  testBigIntTimes()
+  testBigIntDividedBy()
+  testBigIntPow()
+  testBigIntMod()
+  testBigIntDividedByDecimal()
+  testBigIntLeftShift()
+  testBigIntRightShift()
+  testBigIntBitOr()
+  testBigIntBitAnd()
+  testBigIntFromString()
+  testBigIntToString()
+  testBigIntToHex()
+  testBigDecimalPlus()
+  testBigDecimalMinus()
+  testBigDecimalTimes()
+  testBigDecimalDividedBy()
+  testBigDecimalFromString()
+  testBigDecimalToString()
+  testBigDecimalEquals()
+  testBytesToHex()
+  testBytesToString()
+  testHexToBytes()
+  testBytesToBase58()
+  testEthereumBlock()
 }
