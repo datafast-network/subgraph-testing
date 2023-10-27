@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "codegen": "graph codegen --output-dir src/types/",
-    "build": "graph build",
-    "release": "yarn codegen && yarn build && yarn copy",
-    "copy": "cp -p build/Factory/Factory.wasm ../../build/test_0_0_4.wasm"
+    "build": "graph codegen --output-dir src/types/ && graph build",
+    "cp": "mv ./build/Factory/Factory.wasm ../../wasm/test_0_0_4.wasm"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.20.0",
