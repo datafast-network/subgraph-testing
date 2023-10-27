@@ -1,5 +1,5 @@
 {
-  "name": "uniswap-v3-subgraph",
+  "name": "v5-subgraph",
   "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "scripts": {
