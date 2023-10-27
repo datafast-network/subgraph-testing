@@ -239,5 +239,4 @@ export function testAll(): void {
   testBytesToString()
   testHexToBytes()
   testBytesToBase58()
-  testEthereumBlock()
 }

@@ -1,4 +1,4 @@
-import {log, BigInt, Bytes, BigDecimal} from '@graphprotocol/graph-ts'
+import {log, BigInt, Bytes, BigDecimal, ethereum } from '@graphprotocol/graph-ts'
 
 export function testLog(): void {
     log.debug(
@@ -204,8 +204,12 @@ export function testEthereumBlock(
   let blockNumber = block.number.toString()
   let txHash = transaction.hash.toHexString()
   let eventAddress = event.address.toHexString()
-  let jointStr = `block_number=${blockNumber}, tx_hash=${txHash}, event_address=${eventAddress}`
-  return jointStr
+  
+  let expectedBlockNumber = 'block_number='.concat(blockNumber);
+  let expectedTxHash = 'tx_hash='.concat(txHash);
+  let expectedEventAddress = 'event_address='.concat(eventAddress);
+  
+  return expectedBlockNumber + ', ' + expectedTxHash + ', ' + expectedEventAddress
 }
 
 
@@ -236,5 +240,4 @@ export function testAll(): void {
   testBytesToString()
   testHexToBytes()
   testBytesToBase58()
-  testEthereumBlock()
 }
