@@ -3,26 +3,6 @@
   "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "scripts": {
-      "v4": "cd packages/v0_0_4 && yarn install && cd ../..",
-      "v5": "cd packages/v0_0_5 && yarn install && cd ../..",
-      "setup": "yarn && yarn v4 && yarn v5",
-      "release": "mkdirp build && cd packages/v0_0_4 && yarn release && cd ../.. && cd packages/v0_0_5 && yarn release && cd ../..",
-      "lint": "eslint --ext .ts src",
-      "prettier": "prettier --write \"src/**/*.ts\"",
-      "test": "jest",
-      "cleanup": "rm -rf packages/v0_0_4/node_modules packages/v0_0_5/node_modules && rm build/*",
-      "copy_quan": "cp -r build/* /Users/quannguyen/workspace/myjob/subgraph-wasm-runtime/src/host_exports/"
-  },
-  "devDependencies": {
-    "@typescript-eslint/parser": "^2.0.0",
-    "eslint": "^6.2.2",
-    "eslint-config-prettier": "^6.1.0",
-    "prettier": "^1.18.2",
-    "typescript": "^3.5.2"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "oclif@3.8.1": "patches/oclif@3.8.1.patch"
-    }
+      "build": "echo `hello`"
   }
 }
