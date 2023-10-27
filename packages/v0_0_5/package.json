@@ -1,0 +1,23 @@
+{
+  "name": "uniswap-v3-subgraph",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "codegen": "graph codegen --output-dir src/types/",
+    "build": "graph build",
+    "release": "yarn codegen && yarn build && yarn copy",
+    "copy": "cp -p build/Factory/Factory.wasm ../../build/test_0_0_5.wasm"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.57.0",
+    "@graphprotocol/graph-ts": "^0.31.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
+    "matchstick-as": "^0.5.1",
+    "mustache": "^4.2.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.2"
+  }
+}

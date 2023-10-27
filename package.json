@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "scripts": {
-      "v4": "cd packages/v0_0_4 && yarn && cd ../..",
-      "v5": "cd packages/v0_0_5 && yarn && cd ../..",
+      "v4": "cd packages/v0_0_4 && yarn install && cd ../..",
+      "v5": "cd packages/v0_0_5 && yarn install && cd ../..",
       "setup": "yarn && yarn v4 && yarn v5",
+      "release": "cd packages/v0_0_4 && yarn release && cd ../.. && cd packages/v0_0_5 && yarn release && cd ../..",
       "lint": "eslint --ext .ts src",
       "prettier": "prettier --write \"src/**/*.ts\"",
-      "test": "jest"
+      "test": "jest",
+      "cleanup": "rm -rf packages/v0_0_4/node_modules packages/v0_0_5/node_modules && rm build/*"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^2.0.0",

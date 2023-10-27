@@ -5,8 +5,8 @@
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "release": "yarn codegen && yarn build && yarn coppy",
-    "coppy": "cp build/Factory/Factory.wasm ../subgraph-wasm-runtime/src/host_exports/test_0_0_4.wasm"
+    "release": "yarn codegen && yarn build && yarn copy",
+    "copy": "cp -p build/Factory/Factory.wasm ../../build/test_0_0_4.wasm"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.20.0",
