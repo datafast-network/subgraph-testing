@@ -1,4 +1,4 @@
-import {log, BigInt, Bytes, BigDecimal} from '@graphprotocol/graph-ts'
+import {log, BigInt, Bytes, BigDecimal, ethereum } from '@graphprotocol/graph-ts'
 
 export function testLog(): void {
     log.debug(
@@ -196,31 +196,48 @@ export function testBytesToBase58(): string {
     return bytes.toBase58()
 }
 
+export function testEthereumBlock(
+  block: ethereum.Block,
+  transaction: ethereum.Transaction,
+  event: ethereum.Event
+): string {
+  let blockNumber = block.number.toString()
+  let txHash = transaction.hash.toHexString()
+  let eventAddress = event.address.toHexString()
+  
+  let expectedBlockNumber = 'block_number='.concat(blockNumber);
+  let expectedTxHash = 'tx_hash='.concat(txHash);
+  let expectedEventAddress = 'event_address='.concat(eventAddress);
+  
+  return expectedBlockNumber + ', ' + expectedTxHash + ', ' + expectedEventAddress
+}
+
+
 export function testAll(): void {
-    testLog()
-    testBigIntPlus()
-    testBigIntMinus()
-    testBigIntTimes()
-    testBigIntDividedBy()
-    testBigIntPow()
-    testBigIntMod()
-    testBigIntDividedByDecimal()
-    testBigIntLeftShift()
-    testBigIntRightShift()
-    testBigIntBitOr()
-    testBigIntBitAnd()
-    testBigIntFromString()
-    testBigIntToString()
-    testBigIntToHex()
-    testBigDecimalPlus()
-    testBigDecimalMinus()
-    testBigDecimalTimes()
-    testBigDecimalDividedBy()
-    testBigDecimalFromString()
-    testBigDecimalToString()
-    testBigDecimalEquals()
-    testBytesToHex()
-    testBytesToString()
-    testHexToBytes()
-    testBytesToBase58()
+  testLog()
+  testBigIntPlus()
+  testBigIntMinus()
+  testBigIntTimes()
+  testBigIntDividedBy()
+  testBigIntPow()
+  testBigIntMod()
+  testBigIntDividedByDecimal()
+  testBigIntLeftShift()
+  testBigIntRightShift()
+  testBigIntBitOr()
+  testBigIntBitAnd()
+  testBigIntFromString()
+  testBigIntToString()
+  testBigIntToHex()
+  testBigDecimalPlus()
+  testBigDecimalMinus()
+  testBigDecimalTimes()
+  testBigDecimalDividedBy()
+  testBigDecimalFromString()
+  testBigDecimalToString()
+  testBigDecimalEquals()
+  testBytesToHex()
+  testBytesToString()
+  testHexToBytes()
+  testBytesToBase58()
 }
