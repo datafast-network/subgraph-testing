@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "build": "pnpm run -r build"
+    "build": "pnpm run -r build",
+    "cp": "pnpm run -r cp"
   },
   "packageManager": "pnpm@8.8.0"
 }
