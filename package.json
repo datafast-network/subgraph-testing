@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "scripts": {
-      "build": "echo `hello`"
-  }
+    "build": "pnpm run -r build"
+  },
+  "packageManager": "pnpm@8.8.0"
 }
