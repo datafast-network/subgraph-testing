@@ -91,12 +91,12 @@ export function testBigIntMod(): BigInt {
     return mod1.plus(mod2).plus(mod3)
 }
 
-export function testBigIntShiftLeft(): BigInt {
+export function testBigIntLeftShift(): BigInt {
     let x = BigInt.fromI32(1000)
     return x.leftShift(10)
 }
 
-export function testBigIntShiftRight(): BigInt {
+export function testBigIntRightShift(): BigInt {
     let x = BigInt.fromI32(1000)
     return x.rightShift(10)
 }
@@ -189,8 +189,8 @@ export function testAll(): void {
     testBigIntPow()
     testBigIntMod()
     testBigIntDividedByDecimal()
-    testBigIntShiftLeft()
-    testBigIntShiftRight()
+    testBigIntLeftShift()
+    testBigIntRightShift()
     testBigIntBitOr()
     testBigIntBitAnd()
     testBigIntFromString()
