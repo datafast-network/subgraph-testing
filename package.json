@@ -4,7 +4,8 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "build": "pnpm run -r build",
-    "cp": "pnpm run -r cp"
+    "cp": "pnpm run -r cp",
+    "build-test": "pnpm build && pnpm cp"
   },
   "packageManager": "pnpm@8.8.0"
 }
