@@ -1,4 +1,4 @@
-import {log, BigInt, BigDecimal, ByteArray} from '@graphprotocol/graph-ts'
+import {log, BigInt, Bytes, BigDecimal} from '@graphprotocol/graph-ts'
 
 export function testLog(): void {
     log.debug(
@@ -166,19 +166,35 @@ export function testBigDecimalToString(): string {
 export function testBigDecimalEquals(): boolean {
     let x = BigDecimal.fromString('1000')
     let y = BigDecimal.fromString('1000')
-    return x.equals(y)
+    let value = x.equals(y)
+    log.info('should true => testBigDecimalEquals: {}', [value.toString()])
+    let x2 = BigDecimal.fromString('2000')
+    let y2 = BigDecimal.fromString('1000')
+    let value2 = x2.equals(y2)
+    log.info('should false => testBigDecimalEquals: {}', [value2.toString()])
+    return value
 }
 
-export function bytesToString(): string {
-    let txHash = ByteArray.fromHexString("0x25b1f7de5e6b8020f8dbb210f4a095727f63e58c8267f95c2de334957bbf20b8")
+export function testBytesToString(): string {
+    let txHash = Bytes.fromUTF8("abc")
+    log.info('testBytesToString: {}', [txHash.toString()])
     return txHash.toString()
 }
 
-export function bytesToHex(): string {
-    let txHash = ByteArray.fromHexString("0x25b1f7de5e6b8020f8dbb210f4a095727f63e58c8267f95c2de334957bbf20b8")
-    return txHash.toHex()
+export function testBytesToHex(): string {
+    let bytes = Bytes.fromUTF8("abc")
+    return bytes.toHex()
 }
 
+export function testHexToBytes(): string {
+    let bytes = Bytes.fromHexString("0x616263")
+    return bytes.toString()
+}
+
+export function testBytesToBase58(): string {
+    let bytes = Bytes.fromUTF8("abc")
+    return bytes.toBase58()
+}
 
 export function testAll(): void {
     testLog()
@@ -203,6 +219,8 @@ export function testAll(): void {
     testBigDecimalFromString()
     testBigDecimalToString()
     testBigDecimalEquals()
-    bytesToString()
-    bytesToHex()
+    testBytesToHex()
+    testBytesToString()
+    testHexToBytes()
+    testBytesToBase58()
 }
