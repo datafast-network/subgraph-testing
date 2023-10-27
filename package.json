@@ -10,7 +10,8 @@
       "lint": "eslint --ext .ts src",
       "prettier": "prettier --write \"src/**/*.ts\"",
       "test": "jest",
-      "cleanup": "rm -rf packages/v0_0_4/node_modules packages/v0_0_5/node_modules && rm build/*"
+      "cleanup": "rm -rf packages/v0_0_4/node_modules packages/v0_0_5/node_modules && rm build/*",
+      "copy_quan": "cp -r build/* /Users/quannguyen/workspace/myjob/subgraph-wasm-runtime/src/host_exports/"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^2.0.0",
