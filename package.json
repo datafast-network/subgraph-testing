@@ -5,6 +5,7 @@
     "build": "pnpm run -r build",
     "cp": "pnpm run -r cp",
     "cp-datasource": "pnpm run -r cp-datasource",
+    "cp-store": "pnpm run -r cp-store",
     "build-test": "pnpm build && pnpm cp && pnpm cp-datasource"
   },
   "packageManager": "pnpm@8.8.0"
