@@ -1,8 +1,13 @@
-import { BigInt } from '@graphprotocol/graph-ts'
+import { BigInt, BigDecimal } from '@graphprotocol/graph-ts'
 import { Token } from '../types/schema'
-import { ZERO_BI, ZERO_BD } from './../utils/constants'
 
 export function testStoreSet(): void {
+  let ZERO_BI = BigInt.fromI32(0)
+  let ONE_BI = BigInt.fromI32(1)
+  let ZERO_BD = BigDecimal.fromString('0')
+  let ONE_BD = BigDecimal.fromString('1')
+  let BI_18 = BigInt.fromI32(18)
+
   let token = new Token('0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48')
   token.symbol = 'MYCOIN'
   token.name = 'MyCoin'
