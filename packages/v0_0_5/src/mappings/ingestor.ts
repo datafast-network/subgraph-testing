@@ -1,4 +1,5 @@
 import {Address, BigInt, Bytes, ethereum, JSONValue, log, Wrapped} from "@graphprotocol/graph-ts";
+import {Transfer} from "../types/Ingestor/ERC20";
 
 export class EthereumFullBlock {
     constructor(
@@ -50,7 +51,8 @@ export function transformEthereumTx(value: JSONValue, index: string): ethereum.T
 }
 
 export function transformEthereumTxs(value: JSONValue): Array<ethereum.Transaction> {
-    let transactions = value.toArray();
+    let block = value.toObject();
+    let transactions = block.get('transactions')!.toArray();
     let txs: Array<ethereum.Transaction> = []
     for (let i = 0; i < transactions.length; i++) {
         txs.push(this.transformEthereumTx(transactions[i], `${i}`))
@@ -60,9 +62,6 @@ export function transformEthereumTxs(value: JSONValue): Array<ethereum.Transacti
 
 export function transformEthereumLog(value: JSONValue): ethereum.Log {
     let logData = value.toObject();
-    let number = logData.get('block_number')!.toBigInt();
-    let number_bytes = Bytes.fromHexString(number.toHex()).toHex();
-    log.info(`Block_number: ${number_bytes}`, [])
     return new ethereum.Log(
         Address.fromString(logData.get('address')!.toString()),
         logData.get('topics')!.toArray().map<Bytes>((value: JSONValue) => Bytes.fromHexString(value.toString())),
@@ -79,7 +78,8 @@ export function transformEthereumLog(value: JSONValue): ethereum.Log {
 }
 
 export function transformEthereumLogs(value: JSONValue): Array<ethereum.Log> {
-    let logs = value.toArray();
+    let block = value.toObject();
+    let logs = block.get("logs")!.toArray();
     let ethLogs: Array<ethereum.Log> = []
     for (let i = 0; i < logs.length; i++) {
         ethLogs.push(this.transformEthereumLog(logs[i]))
@@ -101,4 +101,7 @@ export function transformFullBlock(value: JSONValue): EthereumFullBlock {
         txs,
         logs
     )
+}
+export function handleTransfer(event: Transfer): void {
+    log.info(`>>>>>> Handle transfer {}`, [event.address.toHex()])
 }
