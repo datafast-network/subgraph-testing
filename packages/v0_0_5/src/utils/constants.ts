@@ -1,5 +1,6 @@
 /* eslint-disable prefer-const */
-import { BigInt, BigDecimal, Address } from '@graphprotocol/graph-ts'
+
+import { BigInt, BigDecimal, Address, log } from '@graphprotocol/graph-ts'
 import { Factory as FactoryContract } from '../types/Factory/Factory'
 
 export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
@@ -14,5 +15,10 @@ export let BI_18 = BigInt.fromI32(18)
 export let factoryContract = FactoryContract.bind(Address.fromString(FACTORY_ADDRESS))
 
 export function testGlobalVar(): void {
+  log.info('----------> Address Zero {}', [ADDRESS_ZERO])
+  log.info('----------> Factory Address {}', [FACTORY_ADDRESS])
+  log.info('----------> ZERO_BI={}, ONE_BI={}', [ZERO_BI.toString(), ONE_BI.toString()])
+  log.info('----------> ZERO_BD={}, ONE_BD={}', [ZERO_BD.toString(), ONE_BD.toString()])
+  log.info('----------> BI_18={}', [BI_18.toString()])
   return
 }
