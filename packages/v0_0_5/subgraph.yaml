@@ -151,4 +151,4 @@ dataSources:
           file: ./abis/ERC20.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
-          handler: handler
+          handler: testGlobalVar

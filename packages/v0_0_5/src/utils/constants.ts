@@ -13,6 +13,6 @@ export let BI_18 = BigInt.fromI32(18)
 
 export let factoryContract = FactoryContract.bind(Address.fromString(FACTORY_ADDRESS))
 
-export function handler(): void {
+export function testGlobalVar(): void {
   return
 }
