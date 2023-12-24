@@ -11,11 +11,11 @@ importers:
   packages/uniswap-v3:
     devDependencies:
       '@graphprotocol/graph-cli':
-        specifier: ^0.57.0
-        version: 0.57.0(@types/node@20.8.9)(node-fetch@3.3.2)(typescript@3.9.10)
+        specifier: ^0.64.1
+        version: 0.64.1(@types/node@20.8.9)(node-fetch@3.3.2)(typescript@3.9.10)
       '@graphprotocol/graph-ts':
-        specifier: ^0.31.0
-        version: 0.31.0
+        specifier: ^0.32.0
+        version: 0.32.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^2.0.0
         version: 2.34.0(@typescript-eslint/parser@2.34.0)(eslint@6.8.0)(typescript@3.9.10)
@@ -361,6 +361,51 @@ packages:
       - utf-8-validate
     dev: true
 
+  /@graphprotocol/graph-cli@0.64.1(@types/node@20.8.9)(node-fetch@3.3.2)(typescript@3.9.10):
+    resolution: {integrity: sha512-BUjWLiEvZUPxuJ/PpARXMBeVLBGjJ/AKP+Orqzlb09b/6HAyQwYpDsaz5R9rW05LYPRqMikuCmktY727rbIFuA==}
+    engines: {node: '>=18'}
+    hasBin: true
+    dependencies:
+      '@float-capital/float-subgraph-uncrashable': 0.0.0-internal-testing.5
+      '@oclif/core': 2.8.6(@types/node@20.8.9)(typescript@3.9.10)
+      '@oclif/plugin-autocomplete': 2.3.10(@types/node@20.8.9)(typescript@3.9.10)
+      '@oclif/plugin-not-found': 2.4.3(@types/node@20.8.9)(typescript@3.9.10)
+      '@whatwg-node/fetch': 0.8.8
+      assemblyscript: 0.19.23
+      binary-install-raw: 0.0.13(debug@4.3.4)
+      chalk: 3.0.0
+      chokidar: 3.5.3
+      debug: 4.3.4(supports-color@8.1.1)
+      docker-compose: 0.23.19
+      dockerode: 2.5.8
+      fs-extra: 9.1.0
+      glob: 9.3.5
+      gluegun: 5.1.2(debug@4.3.4)
+      graphql: 15.5.0
+      immutable: 4.2.1
+      ipfs-http-client: 55.0.0(node-fetch@3.3.2)
+      jayson: 4.0.0
+      js-yaml: 3.14.1
+      prettier: 3.0.3
+      request: 2.88.2
+      semver: 7.4.0
+      sync-request: 6.1.0
+      tmp-promise: 3.0.3
+      web3-eth-abi: 1.7.0
+      which: 2.0.2
+      yaml: 1.10.2
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/node'
+      - bufferutil
+      - encoding
+      - node-fetch
+      - supports-color
+      - typescript
+      - utf-8-validate
+    dev: true
+
   /@graphprotocol/graph-ts@0.20.1:
     resolution: {integrity: sha512-JATb0tERXt+JZUYuW9rwfnLzIM4EOBHf/EEZir5JMiIVMP55CoOyQGAwH2dvKSm5O8WQ1BfdbnOvk7YNVMFHsg==}
     dependencies:
@@ -369,6 +414,12 @@ packages:
 
   /@graphprotocol/graph-ts@0.31.0:
     resolution: {integrity: sha512-xreRVM6ho2BtolyOh2flDkNoGZximybnzUnF53zJVp0+Ed0KnAlO1/KOCUYw06euVI9tk0c9nA2Z/D5SIQV2Rg==}
+    dependencies:
+      assemblyscript: 0.19.10
+    dev: true
+
+  /@graphprotocol/graph-ts@0.32.0:
+    resolution: {integrity: sha512-YfKLT2w+ItXD/VPYQiAKtINQONVsAOkcqVFMHlhUy0fcEBVWuFBT53hJNI0/l5ujQa4TSxtzrKW/7EABAdgI8g==}
     dependencies:
       assemblyscript: 0.19.10
     dev: true
@@ -3782,6 +3833,12 @@ packages:
   /prettier@1.19.1:
     resolution: {integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==}
     engines: {node: '>=4'}
+    hasBin: true
+    dev: true
+
+  /prettier@3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
