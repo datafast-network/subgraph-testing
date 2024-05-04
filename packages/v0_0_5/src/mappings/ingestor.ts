@@ -1,6 +1,8 @@
 import {Address, BigInt, Bytes, ethereum, JSONValue, log, Wrapped} from "@graphprotocol/graph-ts";
 import {Transfer} from "../types/Ingestor/ERC20";
 
+const WhiteList = new Array<string>(0);
+
 export class EthereumFullBlock {
     constructor(
         public hash: Bytes,
